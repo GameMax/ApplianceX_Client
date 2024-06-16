@@ -1,0 +1,38 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+header {
+    border-bottom: 1px solid #ddd;
+}
+
+header h1 {
+    margin: 0;
+}
+
+header nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+header nav ul li {
+    display: inline;
+    margin-right: 10px;
+}
+
+.jumbotron {
+    background: url('https://via.placeholder.com/1200x400') center center no-repeat;
+    background-size: cover;
+    color: white;
+    padding: 5rem 2rem;
+}
+
+.jumbotron h1, .jumbotron p {
+    color: white;
+}
+
+.card img {
+    max-height: 200px;
+    object-fit: cover;
+}
