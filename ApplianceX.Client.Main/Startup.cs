@@ -10,9 +10,11 @@ public class Startup
         Configuration = configuration;
     }
 
-    
+
     public void ConfigureServices(IServiceCollection services)
     {
+        services.AddHttpClient();
+
         services.AddControllersWithViews();
         services.AddRazorPages();
     }
