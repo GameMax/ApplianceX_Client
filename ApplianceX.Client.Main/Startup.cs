@@ -1,4 +1,6 @@
-﻿namespace ApplianceX.Client.Main;
+﻿using ApplianceX.Client.Main.Services;
+
+namespace ApplianceX.Client.Main;
 
 public class Startup
 {
@@ -13,7 +15,7 @@ public class Startup
 
     public void ConfigureServices(IServiceCollection services)
     {
-        services.AddHttpClient();
+        services.AddHttpClient<IBaseParser, BaseParser>();
 
         services.AddControllersWithViews();
         services.AddRazorPages();
