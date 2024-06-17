@@ -1,40 +1,34 @@
 using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using ApplianceX.Client.Main.Models;
+using ApplianceX.Client.Main.Services;
 
 namespace ApplianceX.Client.Main.Controllers;
 
 public class HomeController : Controller
 {
-    private readonly HttpClient _client;
-    
+    private readonly IBaseParser _baseParser;
     private readonly ILogger<HomeController> _logger;
 
-    public HomeController(ILogger<HomeController> logger, IHttpClientFactory clientFactory)
+    public HomeController(ILogger<HomeController> logger, IBaseParser baseParser)
     {
         _logger = logger;
-        _client = clientFactory.CreateClient();
+        _baseParser = baseParser;
     }
     
-    public async Task<IActionResult> TestConnection()
+    
+    public async Task<IActionResult> OpenCategory(string category)
     {
-        try
-        {
-            var response = await _client.GetAsync("http://localhost:5000/api/v1/Parser/GetItemIdsByCategoryId?categoryId=80125&page=1");
-            response.EnsureSuccessStatusCode();
+        var collection = await _baseParser.ParseGet<ProductModel[]>($"http://localhost:5000/api/v1/Product/GetProductsByCategory?category={category}");
 
-            var responseData = await response.Content.ReadAsStringAsync();
-
-            return Content(responseData);
-        }
-        catch (Exception e)
-        {
-
-            return BadRequest("Error: " + e.Message);
-
-        }
+        ViewBag.CategoryTitle = category;
+        ViewBag.ItemCount = collection.Length;
+        
+        return View("CategoryIndex", collection);
     }
+    
 
+    
     public IActionResult Index()
     {
         return View();
