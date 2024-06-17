@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>@ViewData["Title"] - ApplianceX.Client.Main</title>
+
+    <link href="~/assets/libs/tiny-slider/dist/tiny-slider.css" rel="stylesheet" />
+    
+    <link href="~/assets/libs/nouislider/dist/nouislider.min.css" rel="stylesheet" />
+    <link rel="shortcut icon" type="image/x-icon" href="~/assets/images/favicon/favicon.ico">
+
+    <link href="~/assets/libs/bootstrap-icons/font/bootstrap-icons.min.css" rel="stylesheet">
+    <link href="~/assets/libs/feather-webfont/dist/feather-icons.css" rel="stylesheet">
+    <link href="~/assets/libs/simplebar/dist/simplebar.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="~/assets/css/theme.min.css">
+    
+
+</head>
+<body>
+
+@RenderBody()
+
+<script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+
+<script src="~/assets/libs/nouislider/dist/nouislider.min.js"></script>
+<script src="~/assets/libs/wnumb/wNumb.min.js"></script>
+<script src="~/assets/js/theme.min.js"></script>
+<script src="~/assets/libs/simplebar/dist/simplebar.min.js"></script>
+
+
+<script src="~/assets/libs/tiny-slider/dist/min/tiny-slider.js"></script>
+<script src="~/assets/js/vendors/tns-slider.js"></script>
+<script src="~/assets/js/vendors/zoom.js"></script>
+
+
+@await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
