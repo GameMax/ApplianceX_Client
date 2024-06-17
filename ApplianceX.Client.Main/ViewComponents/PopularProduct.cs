@@ -17,6 +17,6 @@ public class PopularProduct : ViewComponent
     {
         var collection = _baseParser.ParseGet<ProductModel[]>("http://localhost:5000/api/v1/Product/GetPopularProducts").Result;
         
-        return View("/Pages/Components/PopularProductComponent/PopularProductView.cshtml", collection);
+        return View("/Pages/Components/PopularProductComponent/ProductCardView.cshtml", collection);
     }
 }
