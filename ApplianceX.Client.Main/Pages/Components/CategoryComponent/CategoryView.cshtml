@@ -4,11 +4,10 @@
     <div class="col-12">
         <div class="position-relative">
             <div class="slider-8-columns" id="slider-8-columns">
-                <!-- item -->
                 @foreach (var item in Model)
                 {
                     <div class="item">
-                        <a href="#" class="text-decoration-none text-inherit">
+                        <a href="@Url.Action("OpenCategory", "Home", new {category = item.Title})" class="text-decoration-none text-inherit">
                             <div class="card mb-3 card-lift">
                                 <div class="card-body text-center py-6 text-center">
                                     <div class="my-5">
