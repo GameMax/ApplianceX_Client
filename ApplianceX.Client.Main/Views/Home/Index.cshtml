@@ -76,8 +76,42 @@
 				</div>
 			</section>
 			<!-- section -->
-@await Component.InvokeAsync("PopularProduct")
-			<div class="my-lg-14 my-8">
+
+			<section class="my-lg-14 my-8">
+				<div class="container">
+					<!-- row -->
+					<div class="row align-items-center mb-6">
+						<div class="col-lg-10 col-10">
+							<!-- heading -->
+							<h3 class="align-items-center d-flex mb-0 h4">
+								<svg
+									xmlns="http://www.w3.org/2000/svg"
+									width="24"
+									height="24"
+									viewBox="0 0 24 24"
+									fill="none"
+									stroke="currentColor"
+									stroke-width="2"
+									stroke-linecap="round"
+									stroke-linejoin="round"
+									class="feather feather-star text-primary">
+									<polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+								</svg>
+								<span class="ms-3">Popular Products</span>
+							</h3>
+						</div>
+						<div class="col-lg-2 col-2">
+							<div class="slider-arrow" id="slider-second-arrows"></div>
+						</div>
+					</div>
+					<!-- slider -->
+					<div class="product-slider-second" id="slider-second">
+							@await Component.InvokeAsync("PopularProduct")
+					</div>
+				</div>
+			</section>
+
+<div class="my-lg-14 my-8">
 				<div class="container">
 					<!-- row -->
 					<div class="table-responsive-xxl pb-6 pb-xl-0">
