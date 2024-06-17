@@ -1,0 +1,17 @@
+@model List<ApplianceX.Client.Main.Models.CategoryModel>
+
+<div class="mb-8">
+    <h5 class="mb-3">Categories</h5>
+    <ul class="nav nav-category" id="categoryCollapseMenu">
+        <li class="nav-item border-bottom w-100">
+            <ul class="nav flex-column ms-3">
+                @foreach (var item in Model)
+                {
+                    <li class="nav-item">
+                        <a href="@Url.Action("OpenCategory", "Home", new {category = item.Title})" class="nav-link">@item.Title</a>
+                    </li>
+                }
+            </ul>
+        </li>
+    </ul>
+</div>
