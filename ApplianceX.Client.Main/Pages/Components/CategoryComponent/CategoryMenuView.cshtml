@@ -8,7 +8,7 @@
                 @foreach (var item in Model)
                 {
                     <li class="nav-item">
-                        <a href="@Url.Action("OpenCategory", "Home", new {category = item.Title})" class="nav-link">@item.Title</a>
+                        <a href="@Url.Action("OpenCategory", "Home", new {categoryId = item.Id, category = item.Title})" class="nav-link">@item.Title</a>
                     </li>
                 }
             </ul>

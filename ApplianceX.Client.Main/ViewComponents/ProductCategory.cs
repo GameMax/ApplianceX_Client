@@ -13,9 +13,9 @@ public class ProductCategory : ViewComponent
         _baseParser = baseParser;
     }
 
-    public IViewComponentResult Invoke(string category)
+    public IViewComponentResult Invoke(int categoryId)
     {
-        var collection = _baseParser.ParseGet<ProductModel[]>($"http://localhost:5000/api/v1/Product/GetProductsByCategory?category={category}").Result;
+        var collection = _baseParser.ParseGet<ProductModel[]>($"http://localhost:5000/api/v1/Product/GetProductsByCategoryId?categoryId={categoryId}").Result;
         
         return View("/Pages/Components/PopularProductComponent/ProductCardView.cshtml", collection);
     }

@@ -17,11 +17,12 @@ public class HomeController : Controller
     }
     
     
-    public async Task<IActionResult> OpenCategory(string category)
+    public async Task<IActionResult> OpenCategory(int categoryId, string category)
     {
-        var collection = await _baseParser.ParseGet<ProductModel[]>($"http://localhost:5000/api/v1/Product/GetProductsByCategory?category={category}");
+        var collection = await _baseParser.ParseGet<ProductModel[]>($"http://localhost:5000/api/v1/Product/GetProductsByCategoryId?categoryId={categoryId}");
 
         ViewBag.CategoryTitle = category;
+        ViewBag.CategoryId = categoryId;
         ViewBag.ItemCount = collection.Length;
         
         return View("CategoryIndex", collection);
