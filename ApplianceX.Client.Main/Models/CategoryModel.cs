@@ -18,7 +18,7 @@ public class CategoryModel
             new(){Id = 59, Title = "Сушильні машини", Cover = "/categories/Drying_machine.png"},
             new(){Id = 33, Title = "Електрочайники", Cover = "/categories/Electric_kettle.png"},
             new(){Id = 48, Title = "Вентилятори", Cover = "/categories/Fan.png"},
-            new(){Id = 3, Title = "Кондиціонери", Cover = "/categories/Fridge.png"},
+            new(){Id = 3, Title = "Кондиціонери", Cover = "/categories/fridge.png"},
             new(){Id = 103, Title = "Газові котли", Cover = "/categories/Gas_boiler.png"},
             new(){Id = 41, Title = "Фени", Cover = "/categories/Hair_dryer.png"},
             new(){Id = 93, Title = "Обігрівувачі", Cover = "/categories/Heater.png"},
